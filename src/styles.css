@@ -148,6 +148,74 @@
   --sidebar-ring: #e31928;
 }
 
+  --sidebar-ring: #e31928;
+}
+
+/* =========================================================
+   TEMA CLARO
+   ========================================================= */
+
+html.light {
+  color-scheme: light;
+
+  /* Base */
+  --background: #f5f6f8;
+  --foreground: #171b20;
+
+  /* Cards */
+  --card: #ffffff;
+  --card-foreground: #171b20;
+
+  /* Superfícies */
+  --surface: #ffffff;
+  --surface-2: #eef1f4;
+
+  /* Popovers */
+  --popover: #ffffff;
+  --popover-foreground: #171b20;
+
+  /* UNINTA Vermelho */
+  --primary: #c4121f;
+  --primary-foreground: #ffffff;
+
+  /* Secondary */
+  --secondary: #e9edf1;
+  --secondary-foreground: #171b20;
+
+  /* Muted */
+  --muted: #eef1f4;
+  --muted-foreground: #66707c;
+
+  /* Accent */
+  --accent: #e9edf1;
+  --accent-foreground: #171b20;
+
+  /* Destructive */
+  --destructive: #c4121f;
+  --destructive-foreground: #ffffff;
+
+  /* Bordas / inputs */
+  --border: #d7dde3;
+  --input: #d7dde3;
+  --ring: #c4121f;
+
+  /* Status */
+  --success: #168a55;
+  --warning: #b77900;
+  --info: #2563eb;
+  --gold: #d99b00;
+
+  /* Sidebar */
+  --sidebar: #ffffff;
+  --sidebar-foreground: #252b32;
+  --sidebar-primary: #c4121f;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f0f2f5;
+  --sidebar-accent-foreground: #171b20;
+  --sidebar-border: #d7dde3;
+  --sidebar-ring: #c4121f;
+}
+
 /* =========================================================
    DOCUMENTO
    ========================================================= */
