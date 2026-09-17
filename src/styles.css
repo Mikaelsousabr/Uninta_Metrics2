@@ -4,44 +4,62 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* UNINTA METRIC — visual system aligned to the approved institutional identity. */
+/* =========================================================
+   UNINTA METRIC
+   Design System / Visual Hotfix
+   v0.6.6
+   ========================================================= */
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   --radius-2xl: calc(var(--radius) + 8px);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
+
   --color-popover: var(--popover);
   --color-popover-foreground: var(--popover-foreground);
+
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
+
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
+
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
+
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
+
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
+
   --color-success: var(--success);
   --color-warning: var(--warning);
   --color-info: var(--info);
   --color-gold: var(--gold);
+
   --color-surface: var(--surface);
   --color-surface-2: var(--surface-2);
+
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-ring-offset-background: var(--background);
+
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);
   --color-chart-3: var(--chart-3);
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
+
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar-primary: var(--sidebar-primary);
@@ -50,43 +68,76 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+
   --font-sans: "Montserrat", "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Montserrat", "Inter", ui-sans-serif, system-ui, sans-serif;
 }
 
+/* =========================================================
+   CORES OFICIAIS / TOKENS
+   ========================================================= */
+
 :root {
   color-scheme: dark;
+
   --radius: 0.72rem;
+
+  /* Base */
   --background: #0b1015;
   --foreground: #f7f8fa;
+
+  /* Cards */
   --card: #111820;
   --card-foreground: #f7f8fa;
+
+  /* Superfícies */
   --surface: #121b23;
   --surface-2: #18232d;
+
+  /* Popovers */
   --popover: #111820;
   --popover-foreground: #f7f8fa;
+
+  /* UNINTA Vermelho */
   --primary: #c4121f;
   --primary-foreground: #ffffff;
+
+  /* Secundário */
   --secondary: #18232d;
   --secondary-foreground: #f1f3f5;
+
+  /* Muted */
   --muted: #172029;
-  --muted-foreground: #a8b0b8;
+  --muted-foreground: #9ca3af;
+
+  /* Accent */
   --accent: #e31928;
   --accent-foreground: #ffffff;
+
+  /* UNINTA Dourado */
   --gold: #ffc107;
+
+  /* Estados */
   --destructive: #e11d2e;
   --destructive-foreground: #ffffff;
+
   --success: #19c77a;
   --warning: #ffc107;
   --info: #2f8cff;
-  --border: #293640;
-  --input: #33424d;
+
+  /* UI */
+  --border: #26343f;
+  --input: #31414d;
   --ring: #e31928;
+
+  /* Charts */
   --chart-1: #ef1b2d;
   --chart-2: #2f8cff;
   --chart-3: #ffc107;
   --chart-4: #19c77a;
   --chart-5: #9b51e0;
+
+  /* Sidebar */
   --sidebar: #080d11;
   --sidebar-foreground: #e8edf1;
   --sidebar-primary: #c4121f;
@@ -97,62 +148,524 @@
   --sidebar-ring: #e31928;
 }
 
-html, body { min-height: 100%; background: var(--background); }
+/* =========================================================
+   DOCUMENTO
+   ========================================================= */
+
+html,
+body,
+#root {
+  min-height: 100%;
+  background: var(--background);
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+
+  background:
+    radial-gradient(
+      circle at 88% 0%,
+      rgba(196, 18, 31, 0.13),
+      transparent 25rem
+    ),
+    linear-gradient(
+      135deg,
+      #0b1015 0%,
+      #091117 52%,
+      #0b1015 100%
+    );
+
+  color: #f7f8fa;
+
+  font-family:
+    "Montserrat",
+    "Inter",
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* =========================================================
+   BASE
+   ========================================================= */
 
 @layer base {
-  * { border-color: var(--border); }
-  body {
-    margin: 0;
-    background:
-      radial-gradient(circle at 90% 0%, rgb(196 18 31 / 12%), transparent 28rem),
-      linear-gradient(135deg, #0b1015 0%, #091117 52%, #0b1015 100%);
-    color: var(--foreground);
-    font-family: var(--font-sans);
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
+  * {
+    border-color: var(--border);
   }
-  h1, h2, h3, h4, h5, h6 {
+
+  body {
+    color: var(--foreground);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     color: var(--foreground);
     font-family: var(--font-display);
     font-weight: 700;
     letter-spacing: -0.02em;
   }
-  input, select, textarea, button { color: var(--foreground); }
-  input::placeholder, textarea::placeholder { color: #7f8992; }
-  select option { background: #111820; color: #f7f8fa; }
-  ::selection { background: rgb(196 18 31 / 55%); color: white; }
+
+  input,
+  select,
+  textarea,
+  button {
+    font-family: inherit;
+  }
+
+  select option {
+    background: #111820;
+    color: #f7f8fa;
+  }
+
+  ::selection {
+    background: rgba(196, 18, 31, 0.55);
+    color: #ffffff;
+  }
 }
 
+/* =========================================================
+   HEADINGS
+   ========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #f7f8fa !important;
+}
+
+h1 {
+  font-weight: 700;
+}
+
+h2,
+h3 {
+  font-weight: 650;
+}
+
+/* =========================================================
+   TAILWIND FOREGROUND
+   ========================================================= */
+
+.text-foreground {
+  color: #f7f8fa !important;
+}
+
+.text-card-foreground {
+  color: #f7f8fa !important;
+}
+
+.text-popover-foreground {
+  color: #f7f8fa !important;
+}
+
+.text-secondary-foreground {
+  color: #f1f3f5 !important;
+}
+
+.text-muted-foreground {
+  color: #9ca3af !important;
+}
+
+.text-primary-foreground {
+  color: #ffffff !important;
+}
+
+/* =========================================================
+   HOTFIX — KPIs / NÚMEROS
+   ========================================================= */
+
+/*
+   Os números principais estavam herdando foreground escuro
+   em produção. Estas regras garantem contraste no tema dark.
+*/
+
+.text-2xl,
+.text-3xl,
+.text-4xl,
+.text-5xl {
+  color: #f7f8fa;
+}
+
+.font-bold {
+  color: inherit;
+}
+
+.font-semibold {
+  color: inherit;
+}
+
+/* Cards devem iniciar com foreground claro */
+
+.bg-card,
+[class*="bg-card"] {
+  color: #f7f8fa;
+}
+
+.bg-surface,
+.bg-surface-2,
+[class*="bg-surface"] {
+  color: #f7f8fa;
+}
+
+/* =========================================================
+   CARDS
+   ========================================================= */
+
+[data-slot="card"] {
+  color: #f7f8fa;
+
+  background:
+    linear-gradient(
+      180deg,
+      #131b23 0%,
+      #0f171e 100%
+    );
+
+  border-color: #26343f;
+
+  box-shadow:
+    0 14px 38px rgba(0, 0, 0, 0.16),
+    inset 0 1px rgba(255, 255, 255, 0.015);
+}
+
+/* =========================================================
+   PANEL
+   ========================================================= */
+
 @utility panel {
-  background: linear-gradient(180deg, rgb(20 29 37 / 98%), rgb(14 21 27 / 98%));
+  background:
+    linear-gradient(
+      180deg,
+      rgba(20, 29, 37, 0.98),
+      rgba(14, 21, 27, 0.98)
+    );
+
   border: 1px solid var(--border);
   border-radius: var(--radius-xl);
-  box-shadow: 0 14px 38px rgb(0 0 0 / 16%), inset 0 1px rgb(255 255 255 / 2%);
+
+  box-shadow:
+    0 14px 38px rgba(0, 0, 0, 0.16),
+    inset 0 1px rgba(255, 255, 255, 0.015);
+
+  color: var(--foreground);
 }
+
+/* =========================================================
+   BOTÕES
+   ========================================================= */
+
+button {
+  color: #f7f8fa;
+}
+
+.bg-primary,
+button.bg-primary,
+a.bg-primary {
+  background-color: #c4121f !important;
+  color: #ffffff !important;
+}
+
+.bg-primary *,
+button.bg-primary *,
+a.bg-primary * {
+  color: #ffffff !important;
+}
+
+button[class*="bg-primary"] {
+  color: #ffffff !important;
+}
+
+button[class*="bg-primary"] * {
+  color: #ffffff !important;
+}
+
+/* Hover institucional */
+
+button.bg-primary:hover,
+a.bg-primary:hover {
+  background-color: #df1625 !important;
+}
+
+/* =========================================================
+   INPUTS / SELECTS / TEXTAREA
+   ========================================================= */
+
+input,
+select,
+textarea {
+  color: #f7f8fa !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #7f8994 !important;
+  opacity: 1;
+}
+
+select {
+  background-color: #111820;
+}
+
+select option {
+  background-color: #111820;
+  color: #f7f8fa;
+}
+
+/* =========================================================
+   TABELAS
+   ========================================================= */
+
+table {
+  color: #e8edf1;
+}
+
+thead {
+  color: #9ca3af;
+}
+
+th {
+  color: #aeb7c0;
+}
+
+tbody {
+  color: #e8edf1;
+}
+
+tbody td {
+  color: inherit;
+}
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+aside {
+  color: #e8edf1;
+}
+
+aside a,
+aside button {
+  color: #9ca3af;
+}
+
+aside a:hover,
+aside button:hover {
+  color: #ffffff;
+}
+
+/* Item ativo */
+
+aside .bg-primary,
+aside a.bg-primary,
+aside button.bg-primary {
+  color: #ffffff !important;
+}
+
+aside .bg-primary *,
+aside a.bg-primary *,
+aside button.bg-primary * {
+  color: #ffffff !important;
+}
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+a {
+  color: inherit;
+}
+
+/* =========================================================
+   BORDAS
+   ========================================================= */
+
+.border-border {
+  border-color: #26343f !important;
+}
+
+/* =========================================================
+   CORES SEMÂNTICAS
+   ========================================================= */
+
+.text-success {
+  color: #19c77a !important;
+}
+
+.text-warning {
+  color: #ffc107 !important;
+}
+
+.text-destructive {
+  color: #ef3340 !important;
+}
+
+.text-info {
+  color: #2f8cff !important;
+}
+
+.text-gold {
+  color: #ffc107 !important;
+}
+
+/* =========================================================
+   DIAGONAL / IDENTIDADE VISUAL
+   ========================================================= */
 
 @utility diagonal-glow {
   position: relative;
   overflow: hidden;
+
   &::after {
     content: "";
     position: absolute;
+
     top: -60%;
     right: -10%;
+
     width: 45%;
     height: 220%;
+
     transform: rotate(18deg);
-    background: linear-gradient(90deg, transparent, rgb(196 18 31 / 22%));
+
+    background:
+      linear-gradient(
+        90deg,
+        transparent,
+        rgba(196, 18, 31, 0.22)
+      );
+
     pointer-events: none;
   }
 }
 
-/* Contrast guard for production: dark surfaces must never inherit dark foregrounds. */
-.bg-card, .bg-surface, .bg-surface-2 { color: var(--card-foreground); }
-.text-muted-foreground { color: var(--muted-foreground) !important; }
-.text-foreground { color: var(--foreground) !important; }
-.border-border { border-color: var(--border) !important; }
+/* =========================================================
+   GRÁFICOS — RECHARTS
+   ========================================================= */
 
-/* Graph readability on the institutional dark canvas. */
-.recharts-cartesian-grid line { stroke: #293640; stroke-opacity: .62; }
-.recharts-text { fill: #aeb7c0; }
-.recharts-tooltip-wrapper { outline: none; }
+.recharts-cartesian-grid line {
+  stroke: #26343f;
+  stroke-opacity: 0.55;
+}
+
+.recharts-text {
+  fill: #aeb7c0;
+}
+
+.recharts-cartesian-axis-tick-value {
+  fill: #9ca3af;
+}
+
+.recharts-legend-item-text {
+  color: #cbd2d9 !important;
+}
+
+.recharts-tooltip-wrapper {
+  color: #f7f8fa;
+}
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0b1015;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #33414b;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4b5963;
+}
+
+/* =========================================================
+   FOCUS
+   ========================================================= */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #e31928;
+  outline-offset: 2px;
+}
+
+/* =========================================================
+   UNINTA METRIC — CONTRAST SAFETY NET
+   ========================================================= */
+
+/*
+   IMPORTANTE:
+   Este bloco corrige os elementos que recebem foreground
+   escuro indevidamente quando o app está no tema dark.
+*/
+
+main .text-foreground,
+main [class*="text-foreground"] {
+  color: #f7f8fa !important;
+}
+
+main .text-card-foreground,
+main [class*="text-card-foreground"] {
+  color: #f7f8fa !important;
+}
+
+/*
+   Textos secundários continuam deliberadamente mais suaves.
+*/
+
+main .text-muted-foreground {
+  color: #9ca3af !important;
+}
+
+/*
+   Proteção dos números de dashboard.
+*/
+
+main [class*="text-2xl"],
+main [class*="text-3xl"],
+main [class*="text-4xl"],
+main [class*="text-5xl"] {
+  color: #f7f8fa;
+}
+
+/*
+   Botões institucionais vermelhos precisam sempre possuir
+   texto/ícone branco.
+*/
+
+main button.bg-primary,
+main a.bg-primary {
+  color: #ffffff !important;
+}
+
+main button.bg-primary *,
+main a.bg-primary * {
+  color: #ffffff !important;
+}
