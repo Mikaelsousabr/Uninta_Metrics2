@@ -13,6 +13,8 @@ import {
   Megaphone,
   Search,
   Settings,
+  Moon,
+  Sun,
   Stethoscope,
   Target,
   Upload,
@@ -39,6 +41,7 @@ export function AppShell({ children }: { children: ReactNode }) {
   const navigate = useNavigate();
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const [session, setSession] = useState<Session | null>(null);
+  const [theme, setTheme] = useState<"light" | "dark">("dark");
   const { imports } = useDataset();
 
   useEffect(() => {
@@ -46,6 +49,24 @@ export function AppShell({ children }: { children: ReactNode }) {
     if (!current) navigate({ to: "/", replace: true });
     else setSession(current);
   }, [navigate]);
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("uninta-metric-theme");
+    const initialTheme = savedTheme === "light" ? "light" : "dark";
+
+    setTheme(initialTheme);
+    document.documentElement.classList.toggle("light", initialTheme === "light");
+    document.documentElement.classList.toggle("dark", initialTheme === "dark");
+  }, []);
+
+  const toggleTheme = () => {
+    const nextTheme = theme === "dark" ? "light" : "dark";
+
+    setTheme(nextTheme);
+    localStorage.setItem("uninta-metric-theme", nextTheme);
+
+    document.documentElement.classList.toggle("light", nextTheme === "light");
+    document.documentElement.classList.toggle("dark", nextTheme === "dark");
+  };
 
   const units = ["Todas as unidades", "Sobral", "Fortaleza", "Itapipoca", "Tianguá", "Umirim"];
   const latest = imports[0];
@@ -142,15 +163,55 @@ export function AppShell({ children }: { children: ReactNode }) {
                   : "Período dos dados importados"}
               </span>
             </div>
-            <select aria-label="Filtrar unidade" onChange={(e)=>navigate({to:"/campanhas",search:{unit:e.target.value==="Todas as unidades"?undefined:e.target.value}})} className="rounded-lg border border-border bg-surface px-3 py-2 text-sm outline-none">
+            <select
+              aria-label="Filtrar unidade"
+              onChange={(e) =>
+                navigate({
+                  to: "/campanhas",
+                  search: {
+                    unit:
+                      e.target.value === "Todas as unidades"
+                        ? undefined
+                        : e.target.value,
+                  },
+                })
+              }
+              className="rounded-lg border border-border bg-surface px-3 py-2 text-sm outline-none"
+            >
               {units.map((u) => (
                 <option key={u}>{u}</option>
               ))}
             </select>
+
+            {/* Tema claro / escuro */}
             <button
               type="button"
-              className="relative rounded-lg border border-border bg-surface p-2 text-muted-foreground"
-              title="Notificações" onClick={()=>window.alert(latest?.warnings?.length ? `Última importação: ${latest.warnings.length} aviso(s).\n\n${latest.warnings.slice(0,5).join("\n")}` : "Nenhum aviso pendente na última importação.")}
+              onClick={toggleTheme}
+              className="relative rounded-lg border border-border bg-surface p-2 text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+              title={theme === "dark" ? "Ativar tema claro" : "Ativar tema escuro"}
+              aria-label={theme === "dark" ? "Ativar tema claro" : "Ativar tema escuro"}
+            >
+              {theme === "dark" ? (
+                <Sun className="size-4" />
+              ) : (
+                <Moon className="size-4" />
+              )}
+            </button>
+
+            {/* Notificações */}
+            <button
+              type="button"
+              className="relative rounded-lg border border-border bg-surface p-2 text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+              title="Notificações"
+              onClick={() =>
+                window.alert(
+                  latest?.warnings?.length
+                    ? `Última importação: ${latest.warnings.length} aviso(s).\n\n${latest.warnings
+                        .slice(0, 5)
+                        .join("\n")}`
+                    : "Nenhum aviso pendente na última importação.",
+                )
+              }
             >
               <Bell className="size-4" />
             </button>
