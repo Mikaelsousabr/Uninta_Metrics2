@@ -141,7 +141,7 @@ export function AppShell({ children }: { children: ReactNode }) {
                 <LogOut className="size-3.5" /> Sair
               </button>
             </div>
-            <p className="mt-3 text-[10px] text-muted-foreground">Versão 0.6.6</p>
+            <p className="mt-3 text-[10px] text-muted-foreground">Versão 0.7.0</p>
           </div>
         </aside>
 
@@ -190,6 +190,7 @@ export function AppShell({ children }: { children: ReactNode }) {
               className="relative rounded-lg border border-border bg-surface p-2 text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
               title={theme === "dark" ? "Ativar tema claro" : "Ativar tema escuro"}
               aria-label={theme === "dark" ? "Ativar tema claro" : "Ativar tema escuro"}
+              aria-pressed={theme === "light"}
             >
               {theme === "dark" ? (
                 <Sun className="size-4" />

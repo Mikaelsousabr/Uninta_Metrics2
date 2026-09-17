@@ -4,11 +4,7 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* =========================================================
-   UNINTA METRIC
-   Design System / Visual Hotfix
-   v0.6.6
-   ========================================================= */
+/* UNINTA METRIC — Design System v0.7.0 */
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
@@ -16,50 +12,37 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   --radius-2xl: calc(var(--radius) + 8px);
-
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
-
   --color-popover: var(--popover);
   --color-popover-foreground: var(--popover-foreground);
-
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
-
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
-
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
-
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
-
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
-
   --color-success: var(--success);
   --color-warning: var(--warning);
   --color-info: var(--info);
   --color-gold: var(--gold);
-
   --color-surface: var(--surface);
   --color-surface-2: var(--surface-2);
-
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-ring-offset-background: var(--background);
-
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);
   --color-chart-3: var(--chart-3);
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
-
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar-primary: var(--sidebar-primary);
@@ -68,76 +51,44 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
-
   --font-sans: "Montserrat", "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Montserrat", "Inter", ui-sans-serif, system-ui, sans-serif;
 }
 
-/* =========================================================
-   CORES OFICIAIS / TOKENS
-   ========================================================= */
-
-:root {
+:root,
+html.dark {
   color-scheme: dark;
-
   --radius: 0.72rem;
-
-  /* Base */
   --background: #0b1015;
   --foreground: #f7f8fa;
-
-  /* Cards */
   --card: #111820;
   --card-foreground: #f7f8fa;
-
-  /* Superfícies */
   --surface: #121b23;
   --surface-2: #18232d;
-
-  /* Popovers */
   --popover: #111820;
   --popover-foreground: #f7f8fa;
-
-  /* UNINTA Vermelho */
   --primary: #c4121f;
   --primary-foreground: #ffffff;
-
-  /* Secundário */
   --secondary: #18232d;
   --secondary-foreground: #f1f3f5;
-
-  /* Muted */
   --muted: #172029;
   --muted-foreground: #9ca3af;
-
-  /* Accent */
-  --accent: #e31928;
+  --accent: #26343f;
   --accent-foreground: #ffffff;
-
-  /* UNINTA Dourado */
   --gold: #ffc107;
-
-  /* Estados */
   --destructive: #e11d2e;
   --destructive-foreground: #ffffff;
-
   --success: #19c77a;
   --warning: #ffc107;
   --info: #2f8cff;
-
-  /* UI */
   --border: #26343f;
   --input: #31414d;
   --ring: #e31928;
-
-  /* Charts */
   --chart-1: #ef1b2d;
   --chart-2: #2f8cff;
   --chart-3: #ffc107;
   --chart-4: #19c77a;
   --chart-5: #9b51e0;
-
-  /* Sidebar */
   --sidebar: #080d11;
   --sidebar-foreground: #e8edf1;
   --sidebar-primary: #c4121f;
@@ -146,591 +97,201 @@
   --sidebar-accent-foreground: #ffffff;
   --sidebar-border: #202c35;
   --sidebar-ring: #e31928;
+  --card-shadow: 0 14px 38px rgba(0,0,0,.16);
+  --body-glow: rgba(196,18,31,.13);
+  --chart-grid: #26343f;
+  --chart-text: #aeb7c0;
+  --scroll-track: #0b1015;
+  --scroll-thumb: #33414b;
 }
-
-/* =========================================================
-   TEMA CLARO
-   ========================================================= */
 
 html.light {
   color-scheme: light;
-
-  /* Base */
-  --background: #f5f6f8;
-  --foreground: #171b20;
-
-  /* Cards */
+  --background: #f4f6f8;
+  --foreground: #17202a;
   --card: #ffffff;
-  --card-foreground: #171b20;
-
-  /* Superfícies */
+  --card-foreground: #17202a;
   --surface: #ffffff;
   --surface-2: #eef1f4;
-
-  /* Popovers */
   --popover: #ffffff;
-  --popover-foreground: #171b20;
-
-  /* UNINTA Vermelho */
+  --popover-foreground: #17202a;
   --primary: #c4121f;
   --primary-foreground: #ffffff;
-
-  /* Secondary */
-  --secondary: #e9edf1;
-  --secondary-foreground: #171b20;
-
-  /* Muted */
+  --secondary: #eef1f4;
+  --secondary-foreground: #17202a;
   --muted: #eef1f4;
-  --muted-foreground: #66707c;
-
-  /* Accent */
-  --accent: #e9edf1;
-  --accent-foreground: #171b20;
-
-  /* Destructive */
+  --muted-foreground: #66717d;
+  --accent: #e7ebef;
+  --accent-foreground: #17202a;
+  --gold: #a96f00;
   --destructive: #c4121f;
   --destructive-foreground: #ffffff;
-
-  /* Bordas / inputs */
+  --success: #087a4b;
+  --warning: #9a6500;
+  --info: #1f5fbf;
   --border: #d7dde3;
-  --input: #d7dde3;
+  --input: #cbd3da;
   --ring: #c4121f;
-
-  /* Status */
-  --success: #168a55;
-  --warning: #b77900;
-  --info: #2563eb;
-  --gold: #d99b00;
-
-  /* Sidebar */
+  --chart-1: #c4121f;
+  --chart-2: #2563eb;
+  --chart-3: #b77900;
+  --chart-4: #168a55;
+  --chart-5: #7c3aed;
   --sidebar: #ffffff;
-  --sidebar-foreground: #252b32;
+  --sidebar-foreground: #3b4651;
   --sidebar-primary: #c4121f;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #f0f2f5;
-  --sidebar-accent-foreground: #171b20;
-  --sidebar-border: #d7dde3;
+  --sidebar-accent: #f1f3f5;
+  --sidebar-accent-foreground: #17202a;
+  --sidebar-border: #d9dfe5;
   --sidebar-ring: #c4121f;
+  --card-shadow: 0 8px 24px rgba(18,32,45,.07);
+  --body-glow: rgba(196,18,31,.055);
+  --chart-grid: #d8dee4;
+  --chart-text: #66717d;
+  --scroll-track: #edf0f3;
+  --scroll-thumb: #b8c0c8;
 }
 
-/* =========================================================
-   DOCUMENTO
-   ========================================================= */
-
-html,
-body,
-#root {
-  min-height: 100%;
-  background: var(--background);
-}
-
-html {
-  color-scheme: dark;
-}
+html, body, #root { min-height: 100%; background: var(--background); }
+html { transition: background-color 180ms ease, color 180ms ease; }
 
 body {
   margin: 0;
-
-  background:
-    radial-gradient(
-      circle at 88% 0%,
-      rgba(196, 18, 31, 0.13),
-      transparent 25rem
-    ),
-    linear-gradient(
-      135deg,
-      #0b1015 0%,
-      #091117 52%,
-      #0b1015 100%
-    );
-
-  color: #f7f8fa;
-
-  font-family:
-    "Montserrat",
-    "Inter",
-    ui-sans-serif,
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
-
+  background: radial-gradient(circle at 88% 0%, var(--body-glow), transparent 25rem), var(--background);
+  color: var(--foreground);
+  font-family: "Montserrat","Inter",ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
-/* =========================================================
-   BASE
-   ========================================================= */
-
 @layer base {
-  * {
-    border-color: var(--border);
-  }
-
-  body {
-    color: var(--foreground);
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+  * { border-color: var(--border); }
+  body { color: var(--foreground); }
+  h1,h2,h3,h4,h5,h6 {
     color: var(--foreground);
     font-family: var(--font-display);
     font-weight: 700;
     letter-spacing: -0.02em;
   }
-
-  input,
-  select,
-  textarea,
-  button {
-    font-family: inherit;
-  }
-
-  select option {
-    background: #111820;
-    color: #f7f8fa;
-  }
-
-  ::selection {
-    background: rgba(196, 18, 31, 0.55);
-    color: #ffffff;
-  }
+  input,select,textarea,button { font-family: inherit; }
+  ::selection { background: rgba(196,18,31,.35); color: var(--foreground); }
 }
 
-/* =========================================================
-   HEADINGS
-   ========================================================= */
+h1,h2,h3,h4,h5,h6 { color: var(--foreground) !important; }
+h1 { font-weight: 700; }
+h2,h3 { font-weight: 650; }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: #f7f8fa !important;
-}
+.text-foreground { color: var(--foreground) !important; }
+.text-card-foreground { color: var(--card-foreground) !important; }
+.text-popover-foreground { color: var(--popover-foreground) !important; }
+.text-secondary-foreground { color: var(--secondary-foreground) !important; }
+.text-muted-foreground { color: var(--muted-foreground) !important; }
+.text-primary-foreground { color: var(--primary-foreground) !important; }
+.text-2xl,.text-3xl,.text-4xl,.text-5xl { color: var(--foreground); }
+.font-bold,.font-semibold { color: inherit; }
 
-h1 {
-  font-weight: 700;
-}
-
-h2,
-h3 {
-  font-weight: 650;
-}
-
-/* =========================================================
-   TAILWIND FOREGROUND
-   ========================================================= */
-
-.text-foreground {
-  color: #f7f8fa !important;
-}
-
-.text-card-foreground {
-  color: #f7f8fa !important;
-}
-
-.text-popover-foreground {
-  color: #f7f8fa !important;
-}
-
-.text-secondary-foreground {
-  color: #f1f3f5 !important;
-}
-
-.text-muted-foreground {
-  color: #9ca3af !important;
-}
-
-.text-primary-foreground {
-  color: #ffffff !important;
-}
-
-/* =========================================================
-   HOTFIX — KPIs / NÚMEROS
-   ========================================================= */
-
-/*
-   Os números principais estavam herdando foreground escuro
-   em produção. Estas regras garantem contraste no tema dark.
-*/
-
-.text-2xl,
-.text-3xl,
-.text-4xl,
-.text-5xl {
-  color: #f7f8fa;
-}
-
-.font-bold {
-  color: inherit;
-}
-
-.font-semibold {
-  color: inherit;
-}
-
-/* Cards devem iniciar com foreground claro */
-
-.bg-card,
-[class*="bg-card"] {
-  color: #f7f8fa;
-}
-
-.bg-surface,
-.bg-surface-2,
-[class*="bg-surface"] {
-  color: #f7f8fa;
-}
-
-/* =========================================================
-   CARDS
-   ========================================================= */
+.bg-card,[class*="bg-card"] { color: var(--card-foreground); }
+.bg-surface,.bg-surface-2,[class*="bg-surface"] { color: var(--foreground); }
 
 [data-slot="card"] {
-  color: #f7f8fa;
-
-  background:
-    linear-gradient(
-      180deg,
-      #131b23 0%,
-      #0f171e 100%
-    );
-
-  border-color: #26343f;
-
-  box-shadow:
-    0 14px 38px rgba(0, 0, 0, 0.16),
-    inset 0 1px rgba(255, 255, 255, 0.015);
+  color: var(--card-foreground);
+  background: var(--card);
+  border-color: var(--border);
+  box-shadow: var(--card-shadow);
+  transition: background-color 180ms ease,border-color 180ms ease,box-shadow 180ms ease;
 }
-
-/* =========================================================
-   PANEL
-   ========================================================= */
 
 @utility panel {
-  background:
-    linear-gradient(
-      180deg,
-      rgba(20, 29, 37, 0.98),
-      rgba(14, 21, 27, 0.98)
-    );
-
+  background: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--radius-xl);
-
-  box-shadow:
-    0 14px 38px rgba(0, 0, 0, 0.16),
-    inset 0 1px rgba(255, 255, 255, 0.015);
-
-  color: var(--foreground);
+  box-shadow: var(--card-shadow);
+  color: var(--card-foreground);
 }
 
-/* =========================================================
-   BOTÕES
-   ========================================================= */
-
-button {
-  color: #f7f8fa;
+button { color: var(--foreground); }
+.bg-primary,button.bg-primary,a.bg-primary {
+  background-color: var(--primary) !important;
+  color: var(--primary-foreground) !important;
 }
+.bg-primary *,button.bg-primary *,a.bg-primary *,button[class*="bg-primary"] * { color: #fff !important; }
+button[class*="bg-primary"] { color: #fff !important; }
+button.bg-primary:hover,a.bg-primary:hover { background-color: #df1625 !important; }
 
-.bg-primary,
-button.bg-primary,
-a.bg-primary {
-  background-color: #c4121f !important;
-  color: #ffffff !important;
+input,select,textarea {
+  color: var(--foreground) !important;
+  background-color: var(--surface);
 }
-
-.bg-primary *,
-button.bg-primary *,
-a.bg-primary * {
-  color: #ffffff !important;
-}
-
-button[class*="bg-primary"] {
-  color: #ffffff !important;
-}
-
-button[class*="bg-primary"] * {
-  color: #ffffff !important;
-}
-
-/* Hover institucional */
-
-button.bg-primary:hover,
-a.bg-primary:hover {
-  background-color: #df1625 !important;
-}
-
-/* =========================================================
-   INPUTS / SELECTS / TEXTAREA
-   ========================================================= */
-
-input,
-select,
-textarea {
-  color: #f7f8fa !important;
-}
-
-input::placeholder,
-textarea::placeholder {
-  color: #7f8994 !important;
+input::placeholder,textarea::placeholder {
+  color: var(--muted-foreground) !important;
   opacity: 1;
 }
+select option { background-color: var(--popover); color: var(--popover-foreground); }
 
-select {
-  background-color: #111820;
-}
+table,tbody { color: var(--foreground); }
+thead,th { color: var(--muted-foreground); }
+tbody td { color: inherit; }
 
-select option {
-  background-color: #111820;
-  color: #f7f8fa;
-}
+aside { color: var(--sidebar-foreground); }
+aside a,aside button { color: var(--muted-foreground); }
+aside a:hover,aside button:hover { color: var(--sidebar-accent-foreground); }
+aside .bg-primary,aside a.bg-primary,aside button.bg-primary,
+aside .bg-primary *,aside a.bg-primary *,aside button.bg-primary * { color: #fff !important; }
 
-/* =========================================================
-   TABELAS
-   ========================================================= */
-
-table {
-  color: #e8edf1;
-}
-
-thead {
-  color: #9ca3af;
-}
-
-th {
-  color: #aeb7c0;
-}
-
-tbody {
-  color: #e8edf1;
-}
-
-tbody td {
-  color: inherit;
-}
-
-/* =========================================================
-   SIDEBAR
-   ========================================================= */
-
-aside {
-  color: #e8edf1;
-}
-
-aside a,
-aside button {
-  color: #9ca3af;
-}
-
-aside a:hover,
-aside button:hover {
-  color: #ffffff;
-}
-
-/* Item ativo */
-
-aside .bg-primary,
-aside a.bg-primary,
-aside button.bg-primary {
-  color: #ffffff !important;
-}
-
-aside .bg-primary *,
-aside a.bg-primary *,
-aside button.bg-primary * {
-  color: #ffffff !important;
-}
-
-/* =========================================================
-   LINKS
-   ========================================================= */
-
-a {
-  color: inherit;
-}
-
-/* =========================================================
-   BORDAS
-   ========================================================= */
-
-.border-border {
-  border-color: #26343f !important;
-}
-
-/* =========================================================
-   CORES SEMÂNTICAS
-   ========================================================= */
-
-.text-success {
-  color: #19c77a !important;
-}
-
-.text-warning {
-  color: #ffc107 !important;
-}
-
-.text-destructive {
-  color: #ef3340 !important;
-}
-
-.text-info {
-  color: #2f8cff !important;
-}
-
-.text-gold {
-  color: #ffc107 !important;
-}
-
-/* =========================================================
-   DIAGONAL / IDENTIDADE VISUAL
-   ========================================================= */
+a { color: inherit; }
+.border-border { border-color: var(--border) !important; }
+.text-success { color: var(--success) !important; }
+.text-warning { color: var(--warning) !important; }
+.text-destructive { color: var(--destructive) !important; }
+.text-info { color: var(--info) !important; }
+.text-gold { color: var(--gold) !important; }
 
 @utility diagonal-glow {
   position: relative;
   overflow: hidden;
-
   &::after {
     content: "";
     position: absolute;
-
     top: -60%;
     right: -10%;
-
     width: 45%;
     height: 220%;
-
     transform: rotate(18deg);
-
-    background:
-      linear-gradient(
-        90deg,
-        transparent,
-        rgba(196, 18, 31, 0.22)
-      );
-
+    background: linear-gradient(90deg,transparent,rgba(196,18,31,.18));
     pointer-events: none;
   }
 }
 
-/* =========================================================
-   GRÁFICOS — RECHARTS
-   ========================================================= */
+.recharts-cartesian-grid line { stroke: var(--chart-grid); stroke-opacity: .72; }
+.recharts-text,.recharts-cartesian-axis-tick-value { fill: var(--chart-text); }
+.recharts-legend-item-text { color: var(--chart-text) !important; }
+.recharts-tooltip-wrapper { color: var(--foreground); }
 
-.recharts-cartesian-grid line {
-  stroke: #26343f;
-  stroke-opacity: 0.55;
-}
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--scroll-track); }
+::-webkit-scrollbar-thumb { background: var(--scroll-thumb); border-radius: 20px; }
+::-webkit-scrollbar-thumb:hover { filter: brightness(.88); }
 
-.recharts-text {
-  fill: #aeb7c0;
-}
-
-.recharts-cartesian-axis-tick-value {
-  fill: #9ca3af;
-}
-
-.recharts-legend-item-text {
-  color: #cbd2d9 !important;
-}
-
-.recharts-tooltip-wrapper {
-  color: #f7f8fa;
-}
-
-/* =========================================================
-   SCROLLBAR
-   ========================================================= */
-
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: #0b1015;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #33414b;
-  border-radius: 20px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #4b5963;
-}
-
-/* =========================================================
-   FOCUS
-   ========================================================= */
-
-button:focus-visible,
-a:focus-visible,
-input:focus-visible,
-select:focus-visible,
-textarea:focus-visible {
-  outline: 2px solid #e31928;
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible {
+  outline: 2px solid var(--ring);
   outline-offset: 2px;
 }
 
-/* =========================================================
-   UNINTA METRIC — CONTRAST SAFETY NET
-   ========================================================= */
+main .text-foreground,main [class*="text-foreground"] { color: var(--foreground) !important; }
+main .text-card-foreground,main [class*="text-card-foreground"] { color: var(--card-foreground) !important; }
+main .text-muted-foreground { color: var(--muted-foreground) !important; }
+main [class*="text-2xl"],main [class*="text-3xl"],main [class*="text-4xl"],main [class*="text-5xl"] { color: var(--foreground); }
+main button.bg-primary,main a.bg-primary,main button.bg-primary *,main a.bg-primary * { color: #fff !important; }
 
-/*
-   IMPORTANTE:
-   Este bloco corrige os elementos que recebem foreground
-   escuro indevidamente quando o app está no tema dark.
-*/
+html.light header { box-shadow: 0 1px 0 rgba(20,30,40,.03); }
+html.light [data-slot="card"] { background: #fff; }
+html.light .bg-surface { background-color: #fff; }
+html.light .bg-surface-2 { background-color: #eef1f4; }
+html.light aside { background-color: #fff; }
+html.light main { color: var(--foreground); }
+html.light .diagonal-glow::after { opacity: .55; }
 
-main .text-foreground,
-main [class*="text-foreground"] {
-  color: #f7f8fa !important;
-}
-
-main .text-card-foreground,
-main [class*="text-card-foreground"] {
-  color: #f7f8fa !important;
-}
-
-/*
-   Textos secundários continuam deliberadamente mais suaves.
-*/
-
-main .text-muted-foreground {
-  color: #9ca3af !important;
-}
-
-/*
-   Proteção dos números de dashboard.
-*/
-
-main [class*="text-2xl"],
-main [class*="text-3xl"],
-main [class*="text-4xl"],
-main [class*="text-5xl"] {
-  color: #f7f8fa;
-}
-
-/*
-   Botões institucionais vermelhos precisam sempre possuir
-   texto/ícone branco.
-*/
-
-main button.bg-primary,
-main a.bg-primary {
-  color: #ffffff !important;
-}
-
-main button.bg-primary *,
-main a.bg-primary * {
-  color: #ffffff !important;
+html.dark [data-slot="card"] {
+  background: linear-gradient(180deg,#131b23 0%,#0f171e 100%);
 }
