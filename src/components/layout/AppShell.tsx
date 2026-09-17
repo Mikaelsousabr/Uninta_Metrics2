@@ -120,7 +120,7 @@ export function AppShell({ children }: { children: ReactNode }) {
                 <LogOut className="size-3.5" /> Sair
               </button>
             </div>
-            <p className="mt-3 text-[10px] text-muted-foreground">Versão 0.6.5</p>
+            <p className="mt-3 text-[10px] text-muted-foreground">Versão 0.6.6</p>
           </div>
         </aside>
 
